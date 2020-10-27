@@ -1,4 +1,4 @@
-name: C project CI
+name: Test CI
 
 on:
   push:
@@ -13,6 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        submodules: 'true'
     - name: make
       run: make -C test
     - name: test

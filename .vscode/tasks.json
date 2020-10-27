@@ -1,0 +1,51 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "options": {
+        "env": {
+            "debug": "3",
+            "optLvl": "0"
+        }
+    },
+    "tasks": [
+        {
+            "label": "build test",
+            "type": "shell",
+            "command": "make -j $((`nproc`+1)) -C ${workspaceFolder}/test DEBUG=-g${debug} OPT=-O${optLvl}",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}/test"
+                ]
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": true
+            }
+        },
+        {
+            "label": "clean test",
+            "type": "shell",
+            "command": "make clean -C ${workspaceFolder}/test"
+        },
+        {
+            "label": "run test",
+            "type": "shell",
+            "command": "${workspaceFolder}/test/build/test",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        }
+    ]
+}

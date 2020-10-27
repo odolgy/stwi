@@ -1,0 +1,19 @@
+name: C project CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make -C test
+    - name: test
+      run: ./test/build/test

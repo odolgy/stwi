@@ -1,5 +1,5 @@
 # STWI
-**STWI** is a cross-platform Software TWI (or I2C) driver for master device.
+**STWI** is a cross-platform software TWI (or I2C) driver for master device.
 
 ## Why to use software driver?
 The benefits of using hardware-based drivers are undeniable. But there are some situations when it's not possible:

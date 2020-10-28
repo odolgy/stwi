@@ -1,15 +1,15 @@
 # STWI
-**STWI** is a cross-platform software TWI (or I2C) driver for master device.
+STWI is a cross-platform software TWI (or I2C) driver for master device.
 
 ## Why to use software driver?
-The benefits of using hardware-based drivers are undeniable. But there are some situations when it's not possible:
-- There are no free pins supported by the driver;
+The benefits of using hardware-based drivers are undeniable. But in some cases this is not possible:
+- There are no free pins controlled by the driver;
 - Peripheral device was connected to wrong pins due to schematic mistake.
 
-Don't let this stop your experiments! Software driver based on GPIO pins is the solution you need.
+But that doesn't mean you should stop experimenting and prototyping. Software driver based on GPIO pins is the solution you need.
 
 ## Why to use STWI library?
-There are some good platform-specific libraries like [SoftI2CMaster](https://github.com/felias-fogg/SoftI2CMaster) for Arduino. But **STWI** is written in plain C and can be used on any platform. It is **not the fastest solution**, but you can easily run it on any MCU.
+There are some good platform-specific libraries like [SoftI2CMaster](https://github.com/felias-fogg/SoftI2CMaster) for Arduino. But STWI is written in plain C and can be used on any platform. It is **not the fastest solution**, but you can easily run it on any MCU.
 
 The code is covered with unit tests and the result is predictable. You can see the expected SCL and SDA oscillograms by cloning the repo and running tests (see "test/main.c" and "test/Makefile").
 
